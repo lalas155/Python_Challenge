@@ -24,6 +24,7 @@ def get_engine(user, password, host, port, db):
     return engine
 
 # The code below will read and import the unified .csv file to PostgreSQL defined above, according to the data stored in the .env file.
+# Will also import the individual .csv file of each categ. in order to get correct outputs for specific queries asked in the challenge.
 df = pd.read_csv('imported_csv_postgreSQL_'+date.today().strftime('%d-%m-%Y')+'.csv')
 
 engine=get_engine(DATABASE_USERNAME,DATABASE_PASSWORD,DATABASE_HOST,DATABASE_PORT,DATABASE_NAME)
